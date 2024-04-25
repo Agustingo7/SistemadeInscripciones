@@ -1,1 +1,15 @@
-﻿
+﻿@using RESTAPI_CORE.Modelos
+@model Inscripciones
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "../View/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+</div>
+
+<form asp-action="Eliminar" asp-controller="Inscripciones" <method="post">
+
+    <input asp-for"Id" type="hidden" class="form-control">
+
+

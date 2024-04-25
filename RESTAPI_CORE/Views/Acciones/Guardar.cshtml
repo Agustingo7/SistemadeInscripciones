@@ -1,1 +1,36 @@
-﻿
+﻿@using RESTAPI_CORE.Modelos
+@model Inscripciones
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "../View/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+</div>
+
+<form asp-action="Guardar" asp-controller="Inscripciones" <method="post">
+     <div class="form-group">
+    <label for="exampleFormControlInput1">Id</label>
+    <input type="hidden" class="form-control" id="exampleFormControlInput1" placeholder="Id">
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Nombre</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Apellido</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">DNI</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="DNI">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Edad</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Edad">
+  </div>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Correo</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Correo">
+  </div>
+</form>
