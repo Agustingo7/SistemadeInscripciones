@@ -128,7 +128,7 @@ namespace RESTAPI_CORE.Controllers
                 using (var conexion = new SqlConnection(cadenaSQL))
                 {
                     conexion.Open();
-                    var cmd = new SqlCommand("sp_guardar_Inscripciones", conexion);
+                    var cmd = new SqlCommand("sp_guardar_inscripciones", conexion);
                     cmd.Parameters.AddWithValue("Nombre", objeto.Nombre);
                     cmd.Parameters.AddWithValue("Apellido", objeto.Apellido);
                     cmd.Parameters.AddWithValue("DNI", objeto.DNI);
