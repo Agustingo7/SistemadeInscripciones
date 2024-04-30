@@ -1,1 +1,67 @@
-﻿
+﻿@model List<InscriptosModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="text-right mb-3">
+    <a asp-action="Guardar" asp-controller="Inscripcion" class="btn btn-primary">Agregar Usuario</a>
+</div>
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true">
+                                    <table class="table table-striped mb-0">
+                                        <thead style="background-color: #0a49a7;">
+                                            <tr>
+                                                <th scope="col">NOMBRE</th>
+                                                <th scope="col">APELLIDO</th>
+                                                <th scope="col">DNI</th>
+                                                <th scope="col">EDAD</th>
+                                                <th scope="col">CORREO</th>
+                                                <th scope="col">CARRERA</th>
+                                                <th scope="col">ACCIONES</th>
+
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellido</td>
+                        <td>@item.DNI</td>
+                        <td>@item.Edad+</td>
+                        <td>@item.Correo</td>
+                        <td>@item.Carrera</td>
+                        <td>
+                             <a asp-action="Editar" asp-controller="Inscripcion" class="btn btn-primary btn-sm" asp-route-IdContacto="@item.Id" >Editar</a>
+                             <a asp-action="Eliminar" asp-controller="Inscripcion" class="btn btn-danger btn-sm" asp-route-IdContacto="@item.Id" >Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+        </tbody>
+    </table>
+
+  </div>
+</div>
+

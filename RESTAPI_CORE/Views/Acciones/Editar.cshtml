@@ -1,37 +1,57 @@
-﻿@using RESTAPI_CORE.Modelos
-@model Inscripciones
+﻿@model InscriptosModel
 @{
     ViewData["Title"] = "Editar";
-    Layout = "../View/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="card">
 
+<div class="card">
+  <div class="card-header">
+    Editar
+  </div>
+  <div class="card-body">
+    
+
+      <form asp-action="Editar" asp-controller="Inscripcion" method="post">
+
+           <input asp-for="Id" type="hidden" class="form-control">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="Nombre" type="text" class="form-control">
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Apellido</label>
+        <input asp-for="Apellido" type="text" class="form-control">
+        <span asp-validation-for="Apellido" class="text-danger"></span>
+      </div>
+       <div class="mb-3">
+        <label class="form-label">DNI</label>
+        <input asp-for="DNI" type="text" class="form-control">
+        <span asp-validation-for="DNI" class="text-danger"></span>
+      </div>
+            <div class="mb-3">
+                <label class="form-label">Edad</label>
+                <input asp-for="Edad" type="text" class="form-control">
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="Correo" type="text" class="form-control">
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Carrera</label>
+                <input asp-for="Carrera" type="text" class="form-control">
+                <span asp-validation-for="Carrera" class="text-danger"></span>
+            </div>
+      <button type="submit" class="btn btn-success">Guardar</button>
+      <a asp-action="Listar" asp-controller="Inscripcion" class="btn btn-white">Volver a la lista</a>
+    </form>
+
+
+  </div>
 </div>
 
-<form asp-action= "Editar" asp-controller="Inscripciones" <method="post">
-     <div class="form-group">
-    <label for="exampleFormControlInput1">Id</label>
-    <input type="hidden" class="form-control" id="exampleFormControlInput1" placeholder="Id">
-  </div>
-    <div class="form-group">
-    <label for="exampleFormControlInput1">Nombre</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
-  </div>
-   <div class="form-group">
-    <label for="exampleFormControlInput1">Apellido</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido">
-  </div>
-   <div class="form-group">
-    <label for="exampleFormControlInput1">DNI</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="DNI">
-  </div>
-   <div class="form-group">
-    <label for="exampleFormControlInput1">Edad</label>
-    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Edad">
-  </div>
-   <div class="form-group">
-    <label for="exampleFormControlInput1">Correo</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Correo">
-  </div>
-</form>
+
+

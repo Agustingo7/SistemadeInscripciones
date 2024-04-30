@@ -1,15 +1,32 @@
-﻿@using RESTAPI_CORE.Modelos
-@model Inscripciones
+﻿@model InscriptosModel
 @{
     ViewData["Title"] = "Eliminar";
-    Layout = "../View/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="card">
+  <div class="card-header">
+    Editar Contacto
+  </div>
+  <div class="card-body">
+    
+
+      <form asp-action="Eliminar" asp-controller="Inscripcion" method="post">
+
+       <input asp-for="Id" type="hidden" class="form-control">
+
+       <div class="alert alert-danger" role="alert">
+          ¿Desea eliminar el contacto : @Html.DisplayTextFor(m => m.Nombre) ?
+        </div>
+   
+      <button type="submit" class="btn btn-danger">Elimnar</button>
+      <a asp-action="Listar" asp-controller="Inscripcion" class="btn btn-white">Volver a la lista</a>
+    </form>
+
+
+  </div>
 </div>
 
-<form asp-action="Eliminar" asp-controller="Inscripciones" <method="post">
-
-    <input asp-for"Id" type="hidden" class="form-control">
 
 
